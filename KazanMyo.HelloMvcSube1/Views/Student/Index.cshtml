@@ -1,0 +1,32 @@
+﻿@model List<Ogrenci>
+
+@{
+    ViewData["Title"] = "Öğrenci İşlemleri";
+    ViewData["Description"] = "Kisa Aciklama";
+}
+
+<h1>Öğrenci İşlemleri</h1>
+<a asp-controller="Student" asp-action="AddStudent" class="btn btn-outline-primary">Öğrenci Ekleme</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Numara</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ogr in Model)
+        {
+            <tr>
+                <td>@ogr.Ad</td>
+                <td>@ogr.Soyad</td>
+                <td>@ogr.Numara</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

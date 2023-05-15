@@ -1,0 +1,40 @@
+﻿@model InfoDTO
+@{
+    //Razor Block.. Bu blok içerisine çok satırlı C# kodları yazılabilir. Tek satır olacaksa, blok yapısına gerek yoktur ve sadece @ işareti ile işlem yapılabilir.
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OgrenciBilgi</title>
+</head>
+<body>
+    <h3>Öğrenci Bilgileri</h3>
+
+    @if (Model != null && Model.Ogrenci != null)
+    {
+        <div>
+            @Model.Ogrenci.ToString()
+        </div>
+    }
+    else
+    {
+        <div>
+            Öğrenci Bulunamadı!
+        </div>
+    }
+
+    <h3>Öğretmen Bilgileri</h3>
+    @if (Model != null)
+    {
+        <div>@Model.Ogretmen</div>
+    }
+    else
+    {
+        <div>Öğretmen Bulunamadı!</div>
+    }
+
+</body>
+</html>

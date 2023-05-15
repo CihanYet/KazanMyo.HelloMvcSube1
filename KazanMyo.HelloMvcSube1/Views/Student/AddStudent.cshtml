@@ -1,0 +1,37 @@
+﻿@model Ogrenci
+@{
+    ViewData["Title"] = "Öğrenci Ekleme İşlemi";
+}
+
+<h1>Öğrenci Ekleme</h1>
+
+<form asp-action="AddStudent" asp-controller="Student" method="post">
+    <div class=mb-3>
+        <label asp-for="Ad" class="form-label"></label>
+        <input type="text" asp-for="Ad" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="col-form-label">Soyadı:</label>
+        <input type="text" id="Soyad" name="Soyad" class="form-control" />
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(o=>o.Numara,new{@class="form-label"})
+        @Html.TextBoxFor(o=>o.Numara,new{@class="form-control"})
+    </div>
+    <input type="submit" value="Kaydet" class="btn btn-primary" />
+</form>
+
+@if (TempData["durum"] != null && (bool)TempData["durum"])
+{
+    @section Scripts{
+<script>
+    alert('Ekleme Başarılı!');
+</script>
+    }
+}
+
+@*
+    Tag Helper: HTML etiketleri oluşturulurken bize yardımcı olan yapılardır. asp- ile başlarlar
+    HTML Helper: HTML kodu yazmadan HTML elementleri oluşturmak için kullanılır.
+*@
+
