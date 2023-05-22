@@ -1,18 +1,18 @@
-﻿@model List<Ogrenci>
-
+﻿@model IEnumerable<Ogrenci>
 @{
     ViewData["Title"] = "Öğrenci İşlemleri";
     ViewData["Description"] = "Kisa Aciklama";
 }
 
 <h1>Öğrenci İşlemleri</h1>
-<a asp-controller="Student" asp-action="AddStudent" class="btn btn-outline-primary">Öğrenci Ekleme</a>
+<a asp-controller="Student" asp-action="AddStudent" class="btn btn-outline-success">Öğrenci Ekle</a>
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Ad</th>
             <th>Soyad</th>
             <th>Numara</th>
+            <th>İşlemler</th>
         </tr>
     </thead>
     <tbody>
@@ -22,11 +22,8 @@
                 <td>@ogr.Ad</td>
                 <td>@ogr.Soyad</td>
                 <td>@ogr.Numara</td>
+                <td><a class="btn btn-sm btn-outline-primary" href="/Student/UpdateStudent/@ogr.Ogrenciid">Düzenle</a></td>
             </tr>
         }
     </tbody>
 </table>
-
-
-
-

@@ -10,7 +10,7 @@ namespace KazanMyo.HelloMvcSube1.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=OkulDbMVCSube1;Integrated Security=true");
+            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=OkulDbMVCSube1;Integrated Security=true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
